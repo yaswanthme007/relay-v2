@@ -1,0 +1,14 @@
+[
+  { "word": "Ananya Sharma", "category": "name" },
+  { "word": "Dr. Raghunathan", "category": "clinician" },
+  { "word": "Dr. Mukherjee", "category": "clinician" },
+  { "word": "Metformin", "category": "medication" },
+  { "word": "Levothyroxine", "category": "medication" },
+  { "word": "Atorvastatin", "category": "medication" },
+  { "word": "Hydrochlorothiazide", "category": "medication" },
+  { "word": "Salbutamol", "category": "medication" },
+  { "word": "Maple Street Pharmacy", "category": "location" },
+  { "word": "Repeat prescription", "category": "phrase" },
+  { "word": "Sixty-day supply", "category": "phrase" },
+  { "word": "Five hundred milligrams", "category": "phrase" }
+]

@@ -1,0 +1,279 @@
+/* ═══════════════════════════════════════════════════════════════
+   About Page Styles
+   ═══════════════════════════════════════════════════════════════ */
+
+.about-page {
+  padding: calc(var(--nav-height) + var(--space-8)) 0 var(--space-16);
+  min-height: 100vh;
+}
+
+/* ─── Hero ───────────────────────────────────────────────────── */
+.about-hero {
+  padding: var(--space-16) 0 var(--space-12);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.about-hero__title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+.about-hero__sub {
+  max-width: 640px;
+}
+
+
+/* ─── Section ───────────────────────────────────────────────── */
+.about-section {
+  padding: var(--space-16) 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.about-section-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+  color: var(--color-accent);
+}
+
+.about-section .text-headline {
+  margin-bottom: var(--space-4);
+}
+
+
+/* ─── Split Layout ──────────────────────────────────────────── */
+.about-split {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: var(--space-12);
+  align-items: start;
+}
+
+.about-split__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.about-quote-card {
+  padding: var(--space-8);
+  position: relative;
+}
+
+.about-quote-card::before {
+  content: '"';
+  position: absolute;
+  top: var(--space-4);
+  left: var(--space-4);
+  font-family: var(--font-serif);
+  font-size: 4rem;
+  line-height: 0.5;
+  color: var(--color-accent-soft);
+  user-select: none;
+}
+
+.about-quote-card__text {
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+  line-height: var(--leading-snug);
+  color: var(--color-ink-primary);
+  margin-bottom: var(--space-4);
+  padding-top: var(--space-6);
+}
+
+.about-quote-card__from {
+  font-style: italic;
+}
+
+
+/* ─── Decisions Grid ────────────────────────────────────────── */
+.decisions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+.decision-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.decision-card__title {
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+  line-height: var(--leading-snug);
+}
+
+.decision-card__body {
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color: var(--color-ink-secondary);
+}
+
+.decision-card__body code {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  background: var(--color-accent-soft);
+  color: var(--color-accent-hover);
+  padding: 1px 5px;
+  border-radius: var(--radius-sm);
+}
+
+.decision-card__tag {
+  align-self: flex-start;
+}
+
+
+/* ─── Limitations ───────────────────────────────────────────── */
+.limitations-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.limitation-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  border-left: 3px solid var(--color-warning);
+}
+
+.limitation-item__title {
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+}
+
+.limitation-item__detail {
+  font-size: var(--text-sm);
+}
+
+
+/* ─── Team ──────────────────────────────────────────────────── */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.team-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-3);
+  padding: var(--space-8) var(--space-6);
+}
+
+.team-card__avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-accent-soft) 0%, var(--color-accent-glow) 100%);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+}
+
+.team-card__name {
+  font-size: var(--text-base);
+  font-weight: 600;
+}
+
+.team-card__role {
+  max-width: 180px;
+}
+
+
+/* ─── Built With ────────────────────────────────────────────── */
+.built-with {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-12);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+  position: relative;
+  overflow: hidden;
+}
+
+.built-with::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+}
+
+.built-with__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.built-with__icon {
+  color: var(--color-danger);
+  fill: var(--color-danger);
+  animation: breathe 2s ease-in-out infinite;
+}
+
+.built-with__title {
+  font-family: var(--font-sans);
+  font-size: var(--text-lg);
+  font-weight: 600;
+}
+
+.built-with__quote {
+  font-family: var(--font-serif);
+  font-size: var(--text-2xl);
+  line-height: var(--leading-snug);
+  color: var(--color-accent);
+  font-style: italic;
+  max-width: 520px;
+}
+
+
+/* ─── Responsive ────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .about-split {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .decisions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-hero {
+    padding: var(--space-10) 0 var(--space-8);
+  }
+
+  .built-with {
+    padding: var(--space-8);
+  }
+
+  .built-with__quote {
+    font-size: var(--text-xl);
+  }
+}

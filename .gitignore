@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+web/node_modules/
+
+# Build output
+dist/
+web/dist/
+build/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+
+# Cache
+.cache/
+.vite/
+
+# Python
+server/.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Local ledger DB — generated/seeded at runtime, not a deliverable
+server/relay.db

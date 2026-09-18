@@ -1,0 +1,405 @@
+{
+  "config": {
+    "injectedReconstructionDelayMs": 3000,
+    "modelId": "mistv2",
+    "transport": "wss://users-ws.rime.ai/ws3",
+    "audioFormat": "mp3",
+    "asrModel": "whisper-large-v3-turbo",
+    "reconstructionModel": "openai/gpt-oss-120b",
+    "fakeMicSource": "C:\\Users\\Admin\\Desktop\\Relay\\relay\\evidence\\fixtures\\at3_long_utterance.wav",
+    "floorHoldActive": true,
+    "startedAt": "2026-09-06T11:51:58.237Z",
+    "finishedAt": "2026-09-06T11:52:37.156Z"
+  },
+  "steps": [
+    {
+      "name": "setup_complete",
+      "at": "2026-09-06T11:52:03.661Z",
+      "floorHoldActive": true
+    },
+    {
+      "name": "turn_ended",
+      "at": "2026-09-06T11:52:16.077Z",
+      "turnEndAt": 12.061333333333334
+    },
+    {
+      "name": "floor_hold_playing_during_delay",
+      "at": "2026-09-06T11:52:16.377Z",
+      "observed": true
+    },
+    {
+      "name": "candidates_rendered",
+      "at": "2026-09-06T11:52:23.445Z",
+      "candidateCount": 3,
+      "candidate0Text": "I’d like to pick up a refill of my mephramine, 500 mg twice daily, and check on my levothyroxine and atorvastatin refills for next month.",
+      "candidate1Text": "Can I get my mephramine 500 mg twice a day and ask about levothyroxine and atorvastatin refills?"
+    },
+    {
+      "name": "candidate_1_selected",
+      "at": "2026-09-06T11:52:24.008Z",
+      "text": "I’d like to pick up a refill of my mephramine, 500 mg twice daily, and check on my levothyroxine and atorvastatin refills for next month."
+    },
+    {
+      "name": "candidate_1_audio_confirmed_playing",
+      "at": "2026-09-06T11:52:25.621Z",
+      "micDisabledDuringCandidate1": false
+    },
+    {
+      "name": "barge_in",
+      "at": "2026-09-06T11:52:25.792Z",
+      "candidate2Text": "Can I get my mephramine 500 mg twice a day and ask about levothyroxine and atorvastatin refills?",
+      "tapAt": 21.82133333333333,
+      "bargeInAt": 21.872,
+      "localStopLatencyMs": 50.66666666666819
+    },
+    {
+      "name": "full_duplex_mic_check",
+      "at": "2026-09-06T11:52:27.908Z",
+      "micDisabledDuringCandidate1": false,
+      "micDisabledDuringCandidate2": false
+    },
+    {
+      "name": "final_state_captured",
+      "at": "2026-09-06T11:52:36.930Z",
+      "heardEntryCount": 2,
+      "contextClearedEventCount": 52,
+      "errors": []
+    }
+  ],
+  "assertions": {
+    "1_local_playback_stops_within_150ms": {
+      "pass": true,
+      "measured_ms": 50.66666666666819
+    },
+    "2_rime_clear_sent": {
+      "pass": true,
+      "evidence": 52
+    },
+    "3_stale_context_fenced": {
+      "pass": true
+    },
+    "4_stale_late_chunks_observed": {
+      "pass": true,
+      "max_discarded_chunks": 51
+    },
+    "5_discarded_chunks_gt_0": {
+      "pass": true,
+      "value": 51
+    },
+    "6_old_audio_not_played_after_fencing": {
+      "pass": true,
+      "note": "heard_entry for candidate 1 is \"cut\", not \"complete\" — a stale chunk that had been played would instead extend/complete it"
+    },
+    "7_replacement_candidate_heard": {
+      "pass": true,
+      "evidence": {
+        "time": "17:22:33",
+        "status": "complete",
+        "text": "Can I get my mephramine 500 mg twice a day and ask about levothyroxine and atorvastatin refills?"
+      }
+    },
+    "8_original_candidate_marked_cut": {
+      "pass": true,
+      "evidence": {
+        "time": "17:22:25",
+        "status": "cut",
+        "text": "I’d like to pick up a refill of my mephramine, 500 mg twice daily, and check on my levothyroxine and atorvastatin refills for next month.",
+        "cutAt": "0.1s"
+      }
+    },
+    "9_replacement_candidate_marked_complete": {
+      "pass": true,
+      "evidence": {
+        "time": "17:22:33",
+        "status": "complete",
+        "text": "Can I get my mephramine 500 mg twice a day and ask about levothyroxine and atorvastatin refills?"
+      }
+    },
+    "10_microphone_remained_active": {
+      "pass": true,
+      "evidence": {
+        "micDisabledDuringPlayback": false
+      }
+    }
+  },
+  "bridge": {
+    "turnEndAt": 12.061333333333334,
+    "bargeInAt": 21.872,
+    "contextCleared": [
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 0,
+        "at": 21.930666666666667
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 1,
+        "at": 22.501333333333335
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 2,
+        "at": 22.512
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 3,
+        "at": 22.512
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 4,
+        "at": 22.512
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 5,
+        "at": 22.512
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 6,
+        "at": 22.512
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 7,
+        "at": 22.512
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 8,
+        "at": 22.512
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 9,
+        "at": 22.512
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 10,
+        "at": 22.512
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 11,
+        "at": 22.512
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 12,
+        "at": 22.512
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 13,
+        "at": 22.512
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 14,
+        "at": 22.512
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 15,
+        "at": 22.512
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 16,
+        "at": 22.512
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 17,
+        "at": 22.512
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 18,
+        "at": 22.512
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 19,
+        "at": 22.512
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 20,
+        "at": 22.512
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 21,
+        "at": 22.512
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 22,
+        "at": 22.512
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 23,
+        "at": 22.512
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 24,
+        "at": 22.512
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 25,
+        "at": 22.512
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 26,
+        "at": 22.741333333333333
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 27,
+        "at": 22.752
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 28,
+        "at": 22.752
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 29,
+        "at": 22.752
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 30,
+        "at": 22.752
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 31,
+        "at": 22.752
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 32,
+        "at": 22.752
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 33,
+        "at": 22.752
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 34,
+        "at": 22.752
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 35,
+        "at": 22.752
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 36,
+        "at": 22.752
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 37,
+        "at": 22.752
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 38,
+        "at": 22.752
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 39,
+        "at": 22.752
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 40,
+        "at": 22.752
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 41,
+        "at": 22.752
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 42,
+        "at": 22.752
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 43,
+        "at": 22.752
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 44,
+        "at": 22.76
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 45,
+        "at": 22.76
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 46,
+        "at": 22.76
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 47,
+        "at": 22.76
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 48,
+        "at": 22.76
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 49,
+        "at": 22.76
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 50,
+        "at": 22.76
+      },
+      {
+        "contextId": "ctx_2712e680f28f",
+        "discardedChunks": 51,
+        "at": 22.76
+      }
+    ],
+    "heardEntries": [
+      {
+        "time": "17:22:25",
+        "status": "cut",
+        "text": "I’d like to pick up a refill of my mephramine, 500 mg twice daily, and check on my levothyroxine and atorvastatin refills for next month.",
+        "cutAt": "0.1s"
+      },
+      {
+        "time": "17:22:33",
+        "status": "complete",
+        "text": "Can I get my mephramine 500 mg twice a day and ask about levothyroxine and atorvastatin refills?"
+      }
+    ],
+    "errors": []
+  }
+}
